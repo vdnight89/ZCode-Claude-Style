@@ -2,8 +2,9 @@ const root = document.documentElement;
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 let composerSurface;
 let composerTop;
+let composerFooter;
 let home;
-let unmountMascot;
+let unmountMascotControl;
 let unmountRipple;
 let unmountHud;
 
@@ -20,12 +21,14 @@ function visibleAnchor(selector) {
 }
 
 function unmountComposer() {
-  unmountMascot?.();
+  unmountMascotControl?.();
   unmountHud?.();
   composerTop?.remove();
-  unmountMascot = undefined;
+  composerFooter?.remove();
+  unmountMascotControl = undefined;
   unmountHud = undefined;
   composerTop = undefined;
+  composerFooter = undefined;
 }
 
 function syncComposer() {
@@ -33,20 +36,23 @@ function syncComposer() {
   if (surface !== composerSurface) {
     unmountComposer();
     composerSurface = surface;
-    if (!surface) return;
+    const composer = surface?.closest(selectors.composer);
+    if (!composer) return;
 
     composerTop = document.createElement('div');
     composerTop.className = 'zc-cs-composer-top';
+    composerFooter = document.createElement('div');
+    composerFooter.className = 'zc-cs-composer-footer';
     surface.before(composerTop);
+    composer.append(composerFooter);
     if (config.mascot !== 'off') {
       const mount = config.mascot === 'glm' ? mountGlmMascot : mountMascot;
-      unmountMascot = mount(composerTop, reducedMotion);
+      unmountMascotControl = mountMascotControl(composerFooter, () => mount(composerTop, reducedMotion));
     }
-    const composer = surface.closest(selectors.composer);
-    if (config.tokenHud !== false && composer) unmountHud = mountHud(composer, surface, composerTop, selectors);
+    if (config.tokenHud !== false) unmountHud = mountHud(composer, surface, composerTop, composerFooter, selectors);
   }
   // ZCode can insert a task banner before the input after the add-on mounts.
-  if (surface && surface.previousElementSibling !== composerTop) surface.before(composerTop);
+  if (composerTop && surface.previousElementSibling !== composerTop) surface.before(composerTop);
 }
 
 function sync() {

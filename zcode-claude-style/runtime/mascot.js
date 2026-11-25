@@ -1,3 +1,48 @@
+function mountMascotControl(footer, mount) {
+  const key = 'zcode-claude-style:mascot-visible';
+  let enabled = true;
+  try {
+    enabled = localStorage.getItem(key) !== 'false';
+  } catch {
+    // The current window can still use the control when storage is unavailable.
+  }
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'zc-cs-hud-root zc-cs-hud-button zc-cs-mascot-toggle';
+  button.setAttribute('aria-label', '显示吉物');
+  button.title = '队列出现时自动隐藏吉物';
+  footer.append(button);
+
+  let unmount;
+  function render() {
+    button.setAttribute('aria-pressed', String(enabled));
+    button.textContent = enabled ? '吉物 开' : '吉物 关';
+    if (enabled) unmount = mount();
+    else {
+      unmount?.();
+      unmount = undefined;
+    }
+  }
+  const toggle = () => {
+    enabled = !enabled;
+    try {
+      localStorage.setItem(key, String(enabled));
+    } catch {
+      // Keep the selected state for this control even without persistent storage.
+    }
+    render();
+  };
+
+  button.addEventListener('click', toggle);
+  render();
+  return () => {
+    button.removeEventListener('click', toggle);
+    unmount?.();
+    button.remove();
+  };
+}
+
 function mountMascot(anchor, reducedMotion) {
   const { CRAB_FRAME_MS, CRAB_GUTTER, CRAB_SHEETS, CRAB_SHEET_URLS } = crabAssets;
   const view = document.createElement('span');

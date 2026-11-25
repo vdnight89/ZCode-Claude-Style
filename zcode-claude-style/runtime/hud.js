@@ -99,7 +99,7 @@ function hudRecord(key, latest, usage, model) {
   return history;
 }
 
-function mountHud(composer, surface, composerTop, selectors) {
+function mountHud(composer, surface, composerTop, composerFooter, selectors) {
   const top = hudElement('section', 'zc-cs-hud-root zc-cs-hud-top');
   const bar = hudElement('div', 'zc-cs-hud-meter');
   bar.setAttribute('role', 'img');
@@ -152,7 +152,7 @@ function mountHud(composer, surface, composerTop, selectors) {
   feedback.setAttribute('role', 'status');
   panel.append(header, summary, tabs, body, feedback);
   composerTop.prepend(top);
-  composer.append(footer);
+  composerFooter.prepend(footer);
   surface.prepend(rim);
   document.body.append(panel);
 
