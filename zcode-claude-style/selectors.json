@@ -1,0 +1,16 @@
+{
+  "composer": "[data-testid='v4-composer']",
+  "composerSurface": "[data-testid='v4-composer'] .chat-composer-input-surface",
+  "editor": "[data-testid='v4-composer-input']",
+  "hudModel": "[data-testid='v4-model-config']",
+  "hudContext": "[data-testid='chat-context-usage-trigger']",
+  "send": "[data-testid='v4-composer-send']",
+  "model": "[data-testid='chat-model-select-trigger']",
+  "thought": "[data-testid='composer-thought-slider'], [data-testid='composer-thought-meter']",
+  "sidebar": "[data-testid='sidebar']",
+  "taskList": "[data-testid='sidebar-task-list-region']",
+  "home": "[data-testid='chat-empty']",
+  "timeline": "[data-testid='v4-timeline']",
+  "messageLayer": "[data-testid='v4-timeline'] [data-v4-timeline-message-layer]",
+  "turn": "[data-testid='v4-timeline'] [data-v4-turn-unit]"
+}

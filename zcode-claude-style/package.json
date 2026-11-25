@@ -1,0 +1,7 @@
+{
+  "name": "zcode-claude-style",
+  "version": "0.2.1",
+  "private": true,
+  "type": "commonjs",
+  "engines": { "node": ">=22" }
+}

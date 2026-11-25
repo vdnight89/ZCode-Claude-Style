@@ -1,0 +1,15 @@
+/agy-claude-style/
+/dist/
+/logs/
+/Handoff.md
+/handoff-*.md
+/PROMPTS.md
+/verify-cdp-result.json
+/verify-cdp.log
+
+/zcode-claude-style/PROGRESS.md
+/zcode-claude-style/runtime/crab-assets.js
+/zcode-claude-style/vendor/
+.watch.pid
+*.lnk
+node_modules/

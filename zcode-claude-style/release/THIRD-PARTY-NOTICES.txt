@@ -1,0 +1,24 @@
+﻿第三方来源与许可
+
+代码与算法
+
+部分运行时代码、波纹核心及 Token 估算方法源自 0DNANCY 的 agy-claude-style v2.1.0。原 MIT 版权声明保存在 LICENSE。
+https://github.com/0DNANCY/agy-claude-style/blob/main/LICENSE
+
+Node.js
+
+内置 Node.js 22.23.5 官方 Windows x64 可执行文件。Node.js 及其组件的完整许可位于 vendor\node\LICENSE.txt。
+https://nodejs.org/en/blog/release/v22.23.5
+
+GLM 娘
+
+角色设定署名 ZipZipPipe（胖次狐）。包内透明 Q 版图以作者公开作品为参考使用 ImageGen 生成。作者公开说明了分享与再创作；素材的出处、说明入口和生成提示词见 assets\NOTICE.md。
+https://www.bilibili.com/video/BV1bARXBYEZz/
+https://github.com/shuaizenge/ai-girls/blob/main/NOTICE.md
+
+Clawd 帧图
+
+原 Clawd 帧图由上游单独保留权利。此分享包的吉物使用有署名的 GLM 娘素材。
+https://github.com/Nwflower/dsh-claude-style#许可
+
+ZCode、GLM 和 Claude 等名称归对应权利人所有。本包为社区制作，与相关产品方的官方发行无关联。
