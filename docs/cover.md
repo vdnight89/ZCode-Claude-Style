@@ -1,0 +1,7 @@
+# 封面署名
+
+README 封面使用 Codex 内置 ImageGen 生成，以项目内的 GLM 娘吉物为形象参考。GLM 娘角色设定署名 ZipZipPipe（胖次狐）。 [吉物素材来源](../zcode-claude-style/assets/NOTICE.md)
+
+## 生成提示词
+
+> Use case: ads-marketing. Asset type: ultra-wide GitHub README project cover for ZCode Claude Style, a Windows desktop theme and usage extension. Reference image 1 is the project’s GLM chibi mascot, used for visual consistency. Create one polished, editorial digital illustration in a 2.5:1 landscape composition. Left 53%: restrained, beautifully kerned typography displaying exactly “ZCode” on the first line and “Claude Style” on the second, warmly lit ivory lettering against dark charcoal-indigo. Right 47%: the same recognizable small gothic chibi mascot with long midnight hair, violet eyes, white lace headband, black-and-white dress, and a little book, in a crisp refined anime illustration. She sits near two overlapping abstract desktop surfaces, in dusk indigo and warm ivory, with a tasteful thin segmented telemetry line in mint, blue, and amber. The windows are abstract shapes without UI text, imitation app chrome, or numbers. A few very fine ripple arcs behind the composition hint at the home effect. Refined and quiet, using pale parchment, slate blue, muted coral, and ample safe margins. High legibility at GitHub mobile width. No text other than the exact title, no extra mascot, no third-party logos, no watermark. Keep all content within the central 82% in both directions to accommodate editorial cropping.
